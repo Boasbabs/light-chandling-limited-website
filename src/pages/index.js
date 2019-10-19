@@ -30,7 +30,7 @@ export default () => (
         </div>
         <div className="header-form--section">
           <section className="header-form--section-1">
-            <h2 className="header-form__h2 seconday-font">
+            <h2 className="header-form__h2 secondary-font">
               Affordable quality products and services that saves you money
             </h2>
             <p className="header-form__p">
@@ -173,24 +173,57 @@ export default () => (
           </div>
         </section>
       </section>
+    </main>
 
-      <section className="careers-section"></section>
-      <section className="team-section"></section>
-      <section className="contact-section ">
-        <div className="hero-section-1">
-          <h3 className="caps hero-section-h3 primay-color-text">Contacts</h3>
-        </div>
-        <section className="hero-section-2">
-          <section className="contact-section__part-1">
-            <h3>
-              Let's build an awesome brand your customers will go wild for!
-            </h3>
-            <p>Fill this out so we can learn more about you and your needs.</p>
-          </section>
-          <section className="contact-section__part-2">html here</section>
+    <section className="careers-section"></section>
+    <section className="team-section"></section>
+    <section className="contact-section about-section ">
+      <div className="hero-section-1">
+        <h3 className="caps hero-section-h3 white-color-text">Contacts</h3>
+      </div>
+      <section className="hero-section-2">
+        <section className="contact-section__part-1">
+          <h4 className="contact-section-h4 white-color-text secondary-font">
+            Let's grow your Business and profits will go wild for!
+          </h4>
+          <p className="contact-section-p">Fill this out so we can learn more about you and your needs.</p>
+        </section>
+        <section className="contact-section__part-2">
+          <form action="#" class="header-form">
+            <h2>Talk to us.</h2>
+            <label for="name" class="up-case">
+              Name
+            </label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Your full name"
+            />
+            <label for="email" class="up-case">
+              Email
+            </label>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              placeholder="Your email"
+            />
+            <label for="email" class="up-case">
+              Message
+            </label>
+            <textarea rows="10" cols="50" placeholder="Your message"></textarea>
+
+            <div class="button-section">
+              <button class="header-form--button" type="submit">
+                Send message
+              </button>
+            </div>
+          </form>
         </section>
       </section>
-    </main>
+    </section>
+
     <footer className="">
       <div className="footer-container">
         <div className="footer-column">
