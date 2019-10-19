@@ -195,7 +195,7 @@ select,
 option,
 textarea {
   font: 300 16px/22px "Source Sans Pro", "Roboto", "Helvetica Neue", Helvetica,
-  Arial, sans-serif;
+    Arial, sans-serif;
 }
 /*
   ========================================
@@ -211,11 +211,22 @@ textarea {
 } */
 
 .seconday-font {
-  font-family: 'Noto serif', Geneva, Verdana, sans-serif;
+  font-family: "Noto serif", Geneva, Verdana, sans-serif;
 }
 
 .primay-color-text {
   color: #3498db;
+}
+
+.white-color-text {
+  color: #ffffff;
+}
+
+.caps {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 500;
 }
 
 .header-bg {
@@ -234,7 +245,7 @@ textarea {
 .site-logo {
   order: 0;
   height: 34px;
-  width: 34px;
+  /* width: 34px; */
 }
 
 .menu {
@@ -433,43 +444,55 @@ main > * {
   ========================================
 */
 
-.mini-hero {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 52% 60px 10px;
-  margin-top: 2em;
-  margin-bottom: 2em;
+.about-section {
   background-color: #3498db;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   overflow: hidden;
-  height: 350px;
   width: 100%;
+  color: #ffffff;
+  padding-bottom: 2em;
+  margin-bottom: 2em;
 }
 
-.mini-hero h3 {
-  font-size: 38px;
-  line-height: 44px;
-  font-family: "Noto serif", "san-serif", monospace;
-  color: #ffffff;
+.hero-section-h3 {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: bold;
   text-align: center;
+  margin-bottom: 2em;
 }
 
 .hero-section-1 {
-  align-self: center;
-  grid-column: 1/2;
+  display: flex;
+  flex-direction: column;
   padding-top: 2em;
+  color: #ffffff;
+  padding: 2em;
+  margin-top: 2em;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 .hero-section-2 {
-  grid-column: 2/3;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 1em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
 }
-.hero-section-3 {
-  grid-column: 1/2;
-  grid-row: 3 / -1;
-  justify-self: start;
-  align-self: start;
-  padding-top: 5em;
+
+.hero-section__mini-h4 {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 1em;
 }
 
 .mh-bold {
@@ -498,99 +521,6 @@ main > * {
 
 /*
   ========================================
-  recommendation section
-  ========================================
-*/
-
-.recommendation {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
-  grid-column-gap: 2px;
-  grid-row-gap: 1px;
-}
-
-:root {
-  --gutter: 22px;
-}
-
-.rec-horizontal-scroll {
-  display: grid;
-  grid-column: 1 / -1;
-  grid-gap: calc(var(--gutter) / 3);
-  grid-auto-flow: column;
-  grid-auto-columns: calc(23% - var(--gutter) * 2.2);
-  overflow-x: scroll;
-  scroll-snap-type: x proximity;
-  padding-bottom: calc(0.75 * var(--gutter));
-  margin-bottom: calc(-0.25 * var(--gutter));
-}
-
-.rec-card,
-.places-card {
-  display: flex;
-  flex-direction: column;
-  border-radius: 3px;
-}
-
-.rec-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 3px;
-  height: 281px;
-  width: 225px;
-  position: relative;
-  text-align: center;
-  color: #ffffff;
-}
-
-.rec-card > img {
-  position: absolute;
-  z-index: -3;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 3px;
-}
-
-.rec-card h4 {
-  color: #ffffff;
-  font-size: 18px;
-  font-weight: 800;
-  line-height: 26px;
-}
-
-.rec-card p {
-  font-size: 14px;
-  line-height: 18px;
-  font-weight: 600;
-}
-
-.rec-card--details {
-  position: absolute;
-  right: 0;
-  bottom: 32px;
-  width: 100%;
-}
-
-.rec-card--tint {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.45));
-  border-radius: 3px;
-}
-/*
-  ========================================
   Places section
   ========================================
 */
@@ -604,47 +534,55 @@ main > * {
   color: #484848;
 }
 
-.places {
+.places-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
-  grid-template-rows: 1fr auto auto;
-  grid-column-gap: 5px;
-  grid-row-gap: 1px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-column-gap: 1em;
+  grid-row-gap: 1.3em;
+  width: 940px;
+  margin-right: auto;
+  margin-left: auto;
 }
 .places-card {
-  padding: 8px 8px 12px;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-right: 14px;
+  margin-left: 14px;
+}
+
+.places-card--image {
+  display: flex;
+  align-content: start;
+  justify-content: start;
+  padding: 1em 0em;
 }
 
 .places-card--image > img {
-  height: 190px;
-  width: 100%;
+  height: 50px;
+  width: 50px;
   object-fit: cover;
   border-radius: 3px;
 }
 
-.places-card--subtitle {
-  font-size: 12px;
-  font-weight: 800;
-  color: #767676;
-  line-height: 16px;
-  margin-bottom: 2px;
-  text-transform: uppercase;
-}
-
 .places-card--title {
-  font-size: 18px;
+  font-size: 20px;
+  line-height: 26px;
   font-weight: 600;
   color: #484848;
-  line-height: 22px;
-  margin-top: 6px;
+  margin: 20px auto 10px;
+  letter-spacing: 0.5px;
 }
+
 .places-card--details p,
 .places-card--more {
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 400;
   color: #484848;
-  line-height: 18px;
-  margin-bottom: 2px;
+  line-height: 25px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+  width: 100%;
 }
 
 .places-card--more {
